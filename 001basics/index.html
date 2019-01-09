@@ -1,31 +1,106 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <style type="text/css">
-        body{
-            background-image:url(./images/wall.jpg);
-            background-size:100% 100%;
-            height:100%;
-        }
-        html{
-            height:100%;
-        }
-        @keyframes myfirst{
-            from{background:dodgerblue;}
-            to{background:pink;}
-        }
-        p{
-            animation:myfirst 1s infinite;
-        }
-        </style>
+<!DOCTYPE HTML>
+<html>
+<head lang="en">
+  <meta chaarset="UTF-8">
+  <title>求职
+  </title>
+
+<link href="一维宇宙.ico" rel="一维宇宙 icon" />
+<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<p>sahdjh</p>
-<p>sahdjhfhgcvcgthcvghvgcth</p>
+  <div class="D">
+      <div class="cube">
+          <div class="front"></div>
+          <div class="back"></div>
+          <div class="right"></div>
+          <div class="left"></div>
+          <div class="top"></div>
+          <div class="bottom"></div>
+          <i class="i-front"></i>
+          <i class="i-back"></i>
+          <i class="i-right"></i>
+          <i class="i-left"></i>
+          <i class="i-top"></i>
+          <i class="i-bottom"></i>
 
-<p>sahdjh</p>
+       </div>
+
+
+
+
+  </div>
+<div class="box" class="text" style="text-align:left 5px">
+  <div class="link link-miss"><!--第一个-->
+    <span class="icon"></span><!--图标-->     <!--下面这个CLASS用来定义长方形-->
+    <a href="#a"  class="button" data-title="my">
+          <span class="line line-top"></span><!--从左边飞入的顶部边线-->
+          <span class="line line-left"></span><!--从底部飞入的左边线-->
+          <span class="line line-right"></span><!--从顶部飞入的顶右边线-->
+          <span class="line line-bottom"></span><!--从右边飞入的底部边线-->
+          <span>请联系我</span>
+    </a>
+  </div>
+  <div class="link link-play">
+    <span class="icon"></span>
+    <a href="黄杰的工作简历.PDF" target="blank" class="button" data-title="hot">
+          <span class="line line-top"></span>
+          <span class="line line-left"></span>
+          <span class="line line-right"></span>
+          <span class="line line-bottom"></span>
+          个人简历
+    </a>
+  </div>
+  <div class="link link-touch">
+    <span class="icon"></span>
+    <a href="http://www.w3school.com.cn/"target="blank" class="button" data-title="hot">
+          <span class="line line-top"></span>
+          <span class="line line-left"></span>
+          <span class="line line-right"></span>
+          <span class="line line-bottom"></span>
+          w3school
+    </a>
+  </div>
+
+      <div style="width:720px; height:720px; background:url(1.gif); center" class="w"></div>
+</div>
+   <script>
+
+
+   </script>
+<audio controls="controls" autoplay loop  class="music">
+  <source src="lemon.ogg" type="audio/ogg">
+  <source src="lemon.mp3" type="audio/mpeg">
+Your browser does not support the audio tag.
+</audio>
+
+<div id="a" class="call"></div>
+
+<div class="wrap" id="wrap">
+    <!--div.photo负责位移，旋转（平面xy轴旋转）-->
+    <div class="photo photo_front photo_center" onclick="turn(this)"
+    id="photo_{{index}}">
+        <!--div.photo-wrap 负责3D翻转（正反面切换）-->
+        <div class="photo-wrap">
+            <div class="side side-font">
+                <p class="image">
+                    <img src="img/{{img}}" alt="">
+                </p>
+                <div class="caption">{{caption}}</div>
+            </div>
+            <div class="side side-back">
+                <p class="desc">{{desc}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="data.js"></script>
+
+<script type="text/javascript" src="javascript.js"></script>
+
+
+
 
 </body>
 </html>
