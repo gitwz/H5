@@ -1,0 +1,463 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background: #FFA500;/*页面背景颜色*/
+  font-family: 'Avenir Next', 'Lantinghei SC';
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;/*让字体好看些*/
+}
+
+.box{        /*整体大盒子*/
+  width: 1000px;
+  height: 280px;
+  margin-left: 300px;
+  margin-top: 110px;
+
+}
+
+.box .link{
+  width: 205px;
+  height: 280px;
+  margin: 0 20px;
+  float: left;
+  position: relative;
+}
+/*span*/
+.link .icon{
+  display: inline-block;
+width: 100%;
+height: 170px;/*图标高度*/
+transition: 0.2s linear;
+-webkit-transition: 0.2s linear;
+-o-transition: 0.2s linear;
+-moz-transition: 0.2s linear;
+-ms-transition: 0.2s linear;
+}
+.link-miss .icon{
+  background: url("call.png") no-repeat center center;/*定义图标路径*/
+}
+
+.link-play .icon{
+  background: url("myself.png") no-repeat center center;
+}
+.link-touch .icon{
+  background: url("touch.png") no-repeat center center;
+}
+/*link:hover .icon   这是移动到盒子开始旋转*/
+.link .icon:hover{   /*移动到图标开始旋转*/
+     transform: rotate(360deg) scale(1.17);
+     -ms-transform: rotate(360deg);
+     -webkit-transform: rotate(360deg) scale(1.17);
+     -o-transform: rotate(360deg) scale(1.17);
+     -moz-transform: rotate(360deg) scale(1.17);
+}
+.button{
+display: block;
+width: 180px;/*图标下方长方形盒子*/
+height: 50px;
+text-decoration: none;
+line-height: 50px;
+color: 	#000000;
+  font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+  border: 2px solid rgba(255,255,255,1);/*矩形初始颜色*/
+  margin: 30px auto;/*底部矩形盒子与图标边距*/
+  box-sizing: border-box;
+  -mox-bos-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  background: url("allow.png" ) no-repeat 0px center;
+  position: relative;
+  transition: 0.5s linear;
+  -webkit-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+}
+.button:hover{ /*样式选择器指针移动到盒子显示为红色*/
+       border: 2px solid rgba(255, 0, 0, 1);/*前三位为RGB，后一位表示透明与否*/
+       background-position: 20px center;
+}
+.button .line{
+   display: block;
+   position: absolute;
+   background: none
+   transition: 0.5s linear;
+   -webkit-transition: 0.5s ease;
+   -o-transition: 0.5s ease;
+   -moz-transition: 0.5s ease;
+   -ms-transition: 0.5s ease;
+
+}
+.button:hover .line{
+     background: #fff;
+
+}
+/*
+1.高度不变
+2.宽度不变（0-盒子的宽度）
+3.位置：左-右
+*/
+.button .line-top{
+    height: 2px;
+    width: 0px;
+    left: -110%;
+    top: -2px;
+}
+.button:hover .line-top{
+    width: 100%;
+    left: -2px;
+}
+.button .line-bottom{
+    width: 0px;
+    height: 2px;
+    right: -110%;
+    bottom: -2px;
+}
+.button:hover .line-bottom{
+    width: 100%;
+    right: -2px;
+}
+.button .line-left{
+    width: 2px;
+    height: 0;
+    left: -2px;
+    bottom: -110%;
+}
+.button:hover .line-left{
+    height: 100%;
+    bottom: -2px;
+}
+.button .line-right{
+    width: 2px;
+    height: 0;
+    right: -2px;
+    top: -110%;
+}
+.button:hover .line-right{
+    height: 100%;
+    top: -2px;
+}
+.box .tip{
+    position: absolute;
+    padding: 0px 14px;
+    height: 35px;
+    line-height: 35px;
+    background: #2DCB70;
+    color: #FFF;
+    top: 160px;
+    font-size: 160px;
+    font-weight: normal;
+    text-transform: none;
+    margin: 0 auto;
+    border-radius: 3px;
+    opacity: 1;
+
+}
+
+
+  }
+    .w{
+       position: absolute;
+       padding: 0px 0px;
+       height: 35px;
+       line-height: 35px;
+       top: 0px;
+       left:0px;
+
+}
+.music{
+  position: absolute;
+  padding: 5px 5px;
+  height: 35px;
+  line-height: 35px;
+  background: #2DCB70;
+  color: #FFF;
+  top: 0px;
+  left: 0px;
+
+}
+/*3D盒子*/
+.D{
+  width: 100px;
+  height: 100px;
+
+  margin-left: 620px;
+  margin-top: 50px;
+  perspective: 1000px;
+}
+.D .cube{
+  width: 100px;
+  height: 100px;
+  background-color: rgba(0, 0, 0, 0);
+  margin:0 auto;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: rot 20s linear infinite;
+}
+.D .cube div{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+transition: transform 0.3s ease-in;
+}
+
+.D .cube .front{
+  background-image: url("1.png");
+  transform: translateZ(50px);
+}
+.D .cube .back{
+background-image: url("2.png");
+  transform: translateZ(-50px) rotatey(180deg);
+}
+.D .cube .right{
+  background-image: url("3.png");
+  transform: rotatey(90deg) translateZ(50px);
+}
+.D .cube .left{
+  background-image: url("4.png");
+  transform: rotatey(-90deg) translateZ(50px);
+}
+.D .cube .top{
+  background-image: url("5.png");
+  transform: rotatex(90deg) translateZ(50px);
+}
+.D .cube .bottom{
+  background-image: url("6.png");
+  transform: rotatex(-90deg) translateZ(50px);
+}
+
+
+
+.D .cube i{
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+margin-top: -25px;
+margin-left: -25px;
+}
+
+.D .cube .i-front{
+  background-image: url("heart.png");
+  transform: translateZ(25px);
+}
+.D .cube .i-back{
+background-image: url("heart.png");
+  transform: translateZ(-25px) rotatey(180deg);
+}
+.D .cube .i-right{
+  background-image: url("heart.png");
+  transform: rotatey(90deg) translateZ(25px);
+}
+.D .cube .i-left{
+  background-image: url("heart.png");
+  transform: rotatey(-90deg) translateZ(25px);
+}
+.D .cube .i-top{
+  background-image: url("heart.png");
+  transform: rotatex(90deg) translateZ(25px);
+}
+.D .cube .i-bottom{
+  background-image: url("heart.png");
+  transform: rotatex(-90deg) translateZ(25px);
+}
+
+.D .cube div{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+}
+
+.D .cube:hover .front{
+  transform: translateZ(100px);
+}
+.D .cube:hover .back{
+  transform: translateZ(-100px) rotatey(180deg);
+}
+.D .cube:hover .right{
+  transform: rotatey(90deg) translateZ(100px);
+}
+.D .cube:hover .left{
+  transform: rotatey(-90deg) translateZ(100px);
+}
+.D .cube:hover .top{
+  transform: rotatex(90deg) translateZ(100px);
+}
+.D .cube:hover .bottom{
+  transform: rotatex(-90deg) translateZ(100px);
+}
+@keyframes rot{
+  0%{transform: rotateX(0deg)  rotatey(0deg)}
+  100%{transform: rotatex(360deg)  rotatey(360deg)}
+}
+
+.call{
+  width: 700px;
+  height: 300px;
+background-image:url("call me.png");
+margin-left: 320px;
+margin-top: 1000px;
+}
+
+
+
+
+
+
+/*第二个样式表*/
+
+
+.wrap {
+    width: 100%;
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    margin-top: 800px;
+    background:rgba(0,0,0,0);
+
+    -webkit-perspective: 800px;
+    -moz-perspective: 800px; /*兼容火狐浏览器， 把 -webkit-，改为 -moz-*/
+    /*设置垂直居中的方法：*/
+    /*position: absolute;*/
+    /*top: 50%;*/
+    /*margin-top: -300px;  设置为高度的一半*/
+}
+.photo {
+    width: 260px;
+    height: 320px;
+    position: absolute;/*漂浮起来？！*/
+    z-index: 1;
+    box-shadow: 0 0 1px rgba(0,0,0,.01);
+    /*transform: rotateY(30deg);*/
+
+    -webkit-transition: all .65s;
+}
+.photo .side {
+    width: 100%;
+    height: 100%;
+    background: #eee;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 20px;
+    box-sizing: border-box; /**/
+}
+.photo .side-font {}
+.photo .side-font .image{
+    width: 100%;
+    height: 250px;
+    line-height: 250px;
+    overflow: hidden;
+}
+.side-font .image img {
+    width: 100%;
+}
+.side-font .caption {
+    text-align: center;
+    font-size: 16px;
+    line-height: 50px;
+}
+.side-back {
+    /*display: none;*/
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5em;
+}
+/*当前被选中 海报的样式 */
+.photo_center {
+    width: 260px;
+    height: 320px;
+    left: 50%;
+    top: 50%;
+    margin: -160px 0 0 -130px;
+    z-index: 100;
+}
+/*设置水平、垂直居中的方法：*/
+/*position: absolute; !*已经在.photo中设置了，这里不用设置了*!*/
+/*left: 50%;*/
+/*top: 50%;*/
+/*margin-top: -160px; !*设置为高度的一半*!*/
+/*margin-left: -130px; !*设置为宽度的一半*!*/
+
+.photo-wrap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-transform-style: preserve-3d;/*支持子元素的3D旋转效果*/
+    -webkit-transition: -webkit-transform 0.6s ease-in-out;
+}
+.photo-wrap .side-font {
+    -webkit-transform: rotateY(0deg);/*沿Y轴旋转*/
+}
+.photo-wrap .side-back {
+    -webkit-transform: rotateY(180deg);
+}
+.photo-wrap .side {
+    -webkit-backface-visibility: hidden;/*当元素不面向屏幕是隐*/
+}
+
+.photo_front .photo-wrap {
+    -webkit-transform: rotateY(0deg);
+}
+.photo_back .photo-wrap {
+    -webkit-transform: rotateY(180deg);
+}
+
+.nav {
+    width: 80%;
+    height: 30px;
+    line-height: 30px;
+    position: absolute;
+    left: 10%;
+    bottom: -100px;
+    z-index: 200;
+    background-color:rgba(0,0,0, 0);
+    text-align: center;
+}
+
+.nav .i {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    cursor: pointer; /**/
+    background-color: #fff;
+    text-align: center;
+    border-radius: 50%;
+
+    -webkit-transform: scale(.48); /*缩放倍数 .48*/
+}
+/*被选中时 样式*/
+.nav .i_current {
+    -webkit-transform: scale(1);
+}
+
+/*优化样式*/
+/* .photo 的所有元素有了 left top margin 三个属性,每次排序，都是在原来的位置基础上旋转位移*/
+/*并且刷新页面时所有元素都在中心*/
+/*没有这三个属性 每次都从 0 位置开始*/
+.photo {
+    left: 50%;
+    top: 50%;
+    margin: -160px 0 0 -130px;
+
+    -webkit-transition: .65s;
+}
+
+.photo-wrap {
+    -webkit-transform-origin: 0% 50%;
+}
+.photo_front .photo-wrap {
+    -webkit-transform: translate(0px, 0px) rotateY(0deg);
+}
+.photo_back .photo-wrap {
+    -webkit-transform: translate(260px, 0px) rotateY(180deg);
+}
